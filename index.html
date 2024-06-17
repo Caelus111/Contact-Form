@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Contact Form</title>
+  </head>
+  <body>
+    <main>
+      <div class="form-container">
+        <h1>Contact Us</h1>
+
+        <form>
+          <fieldset class="name">
+            <fieldset class="first-name">
+              <label for="firstName">First Name</label>
+              <input  type="text" name="firstName" id="firstName" />
+              <p class="error-message hide">This field is required</p>
+            </fieldset>
+            <fieldset class="last-name">
+              <label for="lastName">Last Name</label>
+              <input  type="text" name="lastName" id="lastName" />
+              <p class="error-message hide">This field is required</p>
+            </fieldset>
+          </fieldset>
+
+          <fieldset>
+            <label for="email">Email Address</label>
+            <input
+              
+              autocomplete="email"
+              type="email"
+              name="email"
+              id="email"
+            />
+            <p class="error-message hide">Please enter a valid email address</p>
+          </fieldset>
+          <fieldset class="query-type">
+            <label id="query">Query Type</label>
+            <ul>
+              <li>
+                <label for="radio"
+                  ><input
+                    
+                    type="radio"
+                    name="queryType"
+                    id="radio"
+                    value="general-enquiry"
+                  />General Enquiry
+                </label>
+              </li>
+              <li>
+                <label for="radio2"
+                  ><input
+                    
+                    type="radio"
+                    name="queryType"
+                    id="radio2"
+                    value="support-request"
+                  />Support Request</label
+                >
+              </li>
+            </ul>
+            <p class="error-message hide">Please select a query type</p>
+          </fieldset>
+          <fieldset>
+            <label for="message">Message</label>
+            <textarea name="message" id="message" cols="20" rows="4"></textarea>
+            <p class="error-message hide">This field is required</p>
+          </fieldset>
+          <fieldset class="checkbox">
+            <div id="consent">
+              <input  type="checkbox" name="consent" id="checkbox-input"/>
+              <label for="checkbox-input" class="consent">I consent to being contacted by the team</label>
+            </div>
+            <p class="error-message hide">
+              To submit form, please consent to being contacted
+            </p>
+          </fieldset>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="success">
+        <div class="success-message">
+          <img src="img/icon-success-check.svg" alt="" />
+          Message Sent!
+        </div>
+        <p>Thanks for completing the form. We'll be in touch soon!</p>
+      </div>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>

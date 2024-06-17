@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: hsl(148, 38%, 91%);
+  position: relative;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 0;
+  row-gap: 10px;
+  column-gap: 15px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+
+h1 {
+  margin: 0.5em 0;
+  color: hsl(171, 83%, 14%);
+  font-size: clamp(1.5rem, 1.3261rem + 0.8696vi, 2rem);
+}
+
+input,
+textarea {
+  font-family: "Karla", sans-serif;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid hsl(0, 0%, 60%);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding-left: 21px;
+  font-size: clamp(0.875rem, 0.8315rem + 0.2174vi, 1rem);
+  color: hsl(171, 83%, 14%);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: 1px solid hsl(169, 82%, 27%);
+}
+
+textarea {
+  height: 94px;
+  padding-top: 10px;
+}
+
+label {
+  color: hsl(171, 83%, 14%);
+}
+
+label:after,
+.checkbox .consent:after {
+  content: " *";
+  color: hsl(169, 82%, 27%);
+}
+
+input[type="text"] {
+  height: 49px;
+}
+
+input[type="email"] {
+  height: 49px;
+}
+
+input[type="radio"] {
+  appearance: none;
+  width: 19.5px;
+  height: 19.5px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  border: 2px solid gray;
+  cursor: pointer;
+  border-radius: 0;
+  border-radius: 50%;
+  flex-wrap: wrap;
+}
+
+input[type="radio"]:before {
+  content: url(img/icon-radio-selected.svg);
+  scale: 0;
+  width: 19.5px;
+  height: 19.5px;
+  transition: 0.2s all;
+}
+
+input[type="radio"]:checked {
+  border: 0;
+}
+
+input[type="radio"]:checked:before {
+  scale: 1;
+}
+
+.query-type li input[type="radio"]:checked {
+   background-color: hsl(148, 38%, 91%);
+  border-color: hsl(169, 82%, 27%);
+  scale: 1;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  appearance: none;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  border: 1px solid gray;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+input[type="checkbox"]::before {
+  content: url(img/icon-checkbox-check.svg);
+  scale: 0;
+  width: auto;
+  height: auto;
+  transition: 0.2s all;
+}
+
+input[type="checkbox"]:checked::before {
+  scale: 1;
+}
+
+button {
+  height: 49px;
+  width: 100%;
+  border: 0;
+  background-color: hsl(169, 82%, 27%);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "Karla", sans-serif;
+  border-radius: 5px;
+  font-size: clamp(0.875rem, 0.8315rem + 0.2174vi, 1rem);
+}
+
+button:hover {
+  background-color: hsl(171, 83%, 14%);
+}
+
+/* FORM  Styling */
+.form-container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+  width: min(46em, 90%);
+  height: 48.3125em;
+  padding: 20px 40px;
+  border-radius: 15px;
+}
+
+.name {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.first-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+}
+
+.last-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+}
+
+.query-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  gap: 15px;
+}
+
+.query-type #query {
+  padding: 0;
+}
+
+.query-type label {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+  padding: 15px 15px 15px 25px;
+  cursor: pointer;
+}
+
+.query-type li label:after {
+  content: "";
+}
+
+.query-type li {
+  width: 100%;
+  gap: 15px;
+  border: 1px solid hsl(0, 0%, 60%);
+  border-radius: 5px;
+  display: flex;
+}
+
+.query-type li:hover {
+  background-color: hsl(148, 38%, 91%);
+  border-color: hsl(169, 82%, 27%);
+}
+
+label.consent {
+  cursor: pointer;
+
+}
+
+#consent {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+}
+
+fieldset.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Success Message */
+.success {
+  position: absolute;
+  top: 5%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 26em;
+  height: 6.25em;
+  line-height: 1.5;
+  border-radius: 15px;
+  background-color: hsl(185, 24%, 22%);
+  color: #fff;
+  padding: 20px;
+  gap: 10px;
+}
+
+.success p {
+  font-size: 15px;
+  color: #b9cdce;
+}
+
+.success-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  gap: 10px;
+}
+
+/* Error State */
+.error-message {
+  color: hsl(0, 66%, 54%);
+  font-size: 14px;
+
+}
+
+.error {
+  border-color: hsl(0, 66%, 54%);
+}
+
+input[type="text"]:focus.error,
+input[type="email"]:focus.error,
+textarea.error {
+  outline: 0;
+}
+
+.hide {
+  display: none;
+}
+
+@media (width < 600px) {
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
+    margin-block: 2em;
+  }
+  textarea {
+    height: 238px;
+  }
+  ul {
+    flex-wrap: wrap;
+  }
+  .form-container {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    width: min(46em, 90%);
+    height: 100%;
+    padding: 20px;
+    border-radius: 15px;
+  }
+  .name {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
