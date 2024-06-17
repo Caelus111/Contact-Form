@@ -280,6 +280,7 @@ fieldset.checkbox {
 .success {
   position: absolute;
   top: 5%;
+ justify-self: center;
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -301,10 +302,11 @@ fieldset.checkbox {
 
 .success-message {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   font-weight: bold;
   gap: 10px;
+  width: 100%;
 }
 
 /* Error State */
