@@ -86,6 +86,10 @@ label {
   color: hsl(171, 83%, 14%);
 }
 
+fieldset {
+  position: relative;
+}
+
 label:after,
 .checkbox .consent:after {
   content: " *";
@@ -313,7 +317,9 @@ fieldset.checkbox {
 .error-message {
   color: hsl(0, 66%, 54%);
   font-size: 14px;
-
+  position: absolute;
+  margin-top: .5em;
+  top: 100%;
 }
 
 .error {

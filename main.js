@@ -1,14 +1,14 @@
 const form = document.querySelector("form");
 const TextInputs = form.querySelectorAll('input[type="text"]');
-
-const inputs = form.querySelectorAll("input");
-
 const EmailInput = form.querySelector("#email");
 const MessageInput = form.querySelector("textarea");
 const radioInput = form.querySelector("#radio");
 const radioInput2 = form.querySelector("#radio2");
 const checkInput = form.querySelector("#checkbox-input");
-const dialog = document.querySelector("dialog");
+
+const success = document.querySelector(".success");
+const errorText = form.querySelectorAll(".error-message");
+let IsFormValid = false;
 
 const validateInputs = (e) => {
   TextInputs.forEach((input) => {
@@ -46,11 +46,6 @@ const validateInputs = (e) => {
   } else {
     setSuccess(checkInput.parentElement);
   }
-
-  if (form.checkValidity()) {
-    showSuccess()
-  }
-  
 };
 
 function setError(ele) {
@@ -68,13 +63,30 @@ function setSuccess(ele) {
   ele.classList.remove("error");
 }
 
-function showSuccess() {
-  const success = document.querySelector(".success");
-  success.style.display = "flex";
+const checkFormValidity = () => {
+  for (const error of errorText) {
+    if (!error.classList.contains("hide")) {
+      IsFormValid = false;
+      break;
+    }
+    IsFormValid = true;
+  }
+  if (IsFormValid) {
+    form.reset();
+  }
+};
+
+function showSuccess(params) {
+  if (IsFormValid) {
+    success.style.display = "flex";
+  } else {
+    success.style.display = "none";
+  }
 }
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-
   validateInputs();
+  checkFormValidity()
+  showSuccess()
 });
